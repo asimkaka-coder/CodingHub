@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.codinghub.R
 import com.example.codinghub.auth.ui.components.CustomTextField
 import com.example.codinghub.main.CheckUserSignedIn
@@ -35,7 +36,7 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun SignupScreen(
-    navController: NavController,
+    navController: NavHostController,
     authViewModel: AuthViewModel,
     coroutineScope: CoroutineScope
 ) {

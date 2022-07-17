@@ -3,6 +3,7 @@ package com.example.codinghub.navigation.auth
 import SplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.codinghub.auth.ui.AuthViewModel
@@ -14,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 
 
 fun NavGraphBuilder.authNavGraph(
-    navController: NavController,
+    navController: NavHostController,
     authViewModel: AuthViewModel,
     coroutineScope:CoroutineScope
 ){

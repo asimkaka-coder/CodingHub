@@ -16,8 +16,10 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.example.codinghub.auth.ui.AuthViewModel
 import com.example.codinghub.navigation.DestinationScreen
+import com.example.codinghub.navigation.Graph
 
 @Composable
 fun NotificationMessage(authViewModel: AuthViewModel) {
@@ -47,15 +49,17 @@ fun CommonProgressSpinner() {
 fun CheckUserSignedIn(
     viewModel: AuthViewModel,
     navController: NavController
-){
+): Boolean {
     val alreadySignedIn = remember{ mutableStateOf(false)}
     val loggedIn = viewModel.signedIn.value
     if(loggedIn && !alreadySignedIn.value){
         alreadySignedIn.value = true
-        navController.navigate(DestinationScreen.HomeScreen.route){
-            popUpTo(0)
+        navController.navigate(Graph.SCAFFOLD){
+            popUpTo(Graph.SCAFFOLD)
+            launchSingleTop = true
         }
     }
+    return loggedIn
 }
 
 fun navigateTo(navController: NavController, dest:DestinationScreen) {

@@ -14,4 +14,5 @@ sealed class DestinationScreen(val route: String) {
 object Graph {
     const val AUTHENTICATION = "auth_graph"
     const val HOME = "home_graph"
+    const val SCAFFOLD = "scaffold"
 }

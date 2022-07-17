@@ -26,7 +26,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun SplashScreen(
     authViewModel: AuthViewModel,
-    navController: NavController
+    navController: NavHostController
 ) {
 
 
@@ -34,7 +34,7 @@ fun SplashScreen(
         Animatable(0f)
     }
 
-    CheckUserSignedIn(viewModel = authViewModel, navController = navController)
+//    CheckUserSignedIn(viewModel = authViewModel, navController = navController)
     LaunchedEffect(key1 = true) {
         scale.animateTo(targetValue = 0.9f,
             animationSpec = tween(
